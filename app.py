@@ -9,7 +9,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
-
+a = ''
 
 #======這裡是呼叫的檔案內容=====
 from message import *
@@ -70,6 +70,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     else:
         #message = TextSendMessage(text='金門好運到台灣!')
+        global a
+        a = msg
 
         #url = "https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/text.txt"
         f = open('text1.txt', 'w')
@@ -82,7 +84,7 @@ def handle_message(event):
         if os.path.isfile('text1.txt'):
             m += ' Exist '
         m += f.read()
-        message = TextSendMessage(text=m)
+        message = TextSendMessage(text=a)
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
