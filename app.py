@@ -71,9 +71,10 @@ def handle_message(event):
     else:
         #message = TextSendMessage(text='金門好運到台灣!')
 
-        url = "https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/text.txt"
-        file = urllib.request.urlopen(url)
-        message = TextSendMessage(text=file.read().decode("utf-8"))
+        #url = "https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/text.txt"
+        #file = urllib.request.urlopen(url)
+        f = open('text.txt', 'r')
+        message = TextSendMessage(text=f.read())
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
