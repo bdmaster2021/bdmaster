@@ -69,9 +69,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='金門好運到台灣!')
-        file = open("copy.txt", "w") 
-        file.write("Your text goes here") 
-        file.close() 
+        f = open('text.txt', 'r')
+        message = f.read()
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
