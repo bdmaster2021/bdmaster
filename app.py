@@ -78,8 +78,9 @@ def handle_message(event):
         #file = urllib.request.urlopen(url)
         f = open('text1.txt', 'r')
         m = ''
+        m += os.getcwd()
         if os.path.isfile('text1.txt'):
-            m += 'Exist'
+            m += ' Exist '
         m += f.read()
         message = TextSendMessage(text=m)
         line_bot_api.reply_message(event.reply_token, message)
