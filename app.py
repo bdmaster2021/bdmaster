@@ -68,7 +68,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, 'Nice')
 
 import os
 if __name__ == "__main__":
