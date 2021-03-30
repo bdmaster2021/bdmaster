@@ -68,7 +68,7 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     else:
-        message = TextSendMessage(text='金門好運到')
+        message = TextSendMessage(text='金門好運到台灣')
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
