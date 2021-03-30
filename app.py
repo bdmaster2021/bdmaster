@@ -71,7 +71,7 @@ def handle_message(event):
     else:
         #message = TextSendMessage(text='金門好運到台灣!')
         global a
-        if a != '':
+        if a == '':
             a = msg
 
         #url = "https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/text.txt"
