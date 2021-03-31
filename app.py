@@ -70,7 +70,7 @@ def handle_message(event):
     else:
         fName = 'text.txt'
         if os.path.exists(fName):
-            f = open(fName,'w')
+            f = open(fName,'a')
             f.write('/n'+str(time.time()))
             f.close()
             file1 = open(fName,'r')
