@@ -73,8 +73,15 @@ def handle_message(event):
 
         #url = "https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/text.txt"
         #file = urllib.request.urlopen(url)
-        f = open('text.txt', 'r')
-        message = TextSendMessage(text=f)#file.read().decode("utf-8"))
+        fName = 'text1.txt'
+        if os.path.exists(fName):
+            message = TextSendMessage(text=open(fName,'r'))
+        else:
+            f = open(fName,'w')
+            f.write(time.time())
+            f.close()
+            message = TextSendMessage(text=open(fName,'r'))
+        #message = TextSendMessage(text=f)file.read().decode("utf-8"))
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
