@@ -70,12 +70,16 @@ def handle_message(event):
     else:
         fName = 'text1.txt'
         if os.path.exists(fName):
-            message = TextSendMessage(text=(open(fName,'r')).read())
+            file1 = open(fName,'r')
+            out = file1.read()
+            message = TextSendMessage(text=out)
         else:
             f = open(fName,'w')
             f.write(time.time())
             f.close()
-            message = TextSendMessage(text=(open(fName,'r')).read())
+            file1 = open(fName,'r')
+            out = file1.read()
+            message = TextSendMessage(text=out)
         #message = TextSendMessage(text=f)file.read().decode("utf-8"))
         
         line_bot_api.reply_message(event.reply_token, message)
