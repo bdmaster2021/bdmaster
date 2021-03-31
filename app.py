@@ -68,14 +68,15 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     else:
-        fName = 'text1.txt'
+        fName = 'text2.txt'
         if os.path.exists(fName):
             file1 = open(fName,'r')
             out = file1.read()
+            file1.close()
             message = TextSendMessage(text=out)
         else:
             f = open(fName,'w')
-            f.write(time.time())
+            f.write(str(time.time()))
             f.close()
             file1 = open(fName,'r')
             out = file1.read()
