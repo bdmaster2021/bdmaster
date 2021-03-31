@@ -10,7 +10,6 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
-
 #======這裡是呼叫的檔案內容=====
 from message import *
 from new import *
@@ -69,10 +68,6 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     else:
-        #message = TextSendMessage(text='金門好運到台灣!')
-
-        #url = "https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/text.txt"
-        #file = urllib.request.urlopen(url)
         fName = 'text1.txt'
         if os.path.exists(fName):
             message = TextSendMessage(text=open(fName,'r'))
@@ -82,6 +77,7 @@ def handle_message(event):
             f.close()
             message = TextSendMessage(text=open(fName,'r'))
         #message = TextSendMessage(text=f)file.read().decode("utf-8"))
+        
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
