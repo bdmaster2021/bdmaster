@@ -1,6 +1,7 @@
 from flask import Flask, request, abort
 import time
 import urllib.request
+from flask import render_template
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -34,6 +35,10 @@ majors = ['新聞學系','廣播電視電影學系廣播組','廣播電視電影
          '財務金融學系','行政管理學系','觀光學系餐旅經營管理組','觀光學系旅遊暨休閒事業管理組','觀光學系觀光規劃暨資源管理組','經濟學系','企業管理學系','社會心理學系',
          '英語暨傳播應用學系','中國文學系','日本語文學系','法律學系']
 majorIndex = '99'
+
+@app.route("/")
+def home():
+    return render_template("home.html")
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
