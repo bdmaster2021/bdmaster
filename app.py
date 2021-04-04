@@ -67,6 +67,7 @@ def handle_message(event):
                 else:
                     majorIndex = str(i+1)+'2'
                 message = TextSendMessage(text='您的科系：\n'+msg + '\nIndex:'+majorIndex)
+                break
             else:
                 message = TextSendMessage(text='請重新輸入')
         
