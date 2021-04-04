@@ -105,7 +105,7 @@ def Confirm_Template():
 
 def Carousel_Template():
     message = TemplateSendMessage(
-        alt_text='一則旋轉木馬按鈕訊息',
+        alt_text='金門',
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
