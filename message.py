@@ -13,6 +13,8 @@ def imagemap_message():
             MessageImagemapAction(
                 #性別
                 text='性別',
+                var imageMessage = new ImageMessage(
+                "https://i.imgur.com/zo4YuDr.png");
                 area=ImagemapArea(
                     x=0, y=0, width=2000, height=1000
                 )
