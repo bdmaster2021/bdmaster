@@ -26,8 +26,8 @@ def imagemap_message():
                 )
             ),
             MessageImagemapAction(
-                #競爭校系
-                text='競爭校系',
+                #競爭友校
+                text='競爭友校',
                 area=ImagemapArea(
                     x=1000, y=1000, width=1000, height=1000
                 )
