@@ -61,7 +61,10 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     id = event.source.user_id
-    if '開始使用選才機器人' in msg:
+    if '選才主選單' in msg:
+        message = imagemap_message()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '開始使用選才機器人' in msg:
         message = TextSendMessage(text=str(id)+'\n使用說明：\n請輸入您的科系(含組)全名\n例：資訊管理學系資訊管理組')
         line_bot_api.reply_message(event.reply_token, message)
     elif '系' in msg:
@@ -79,9 +82,6 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     elif '旋轉木馬' in msg:
         message = Carousel_Template()
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '選才主選單' in msg:
-        message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
     else:
         fName = 'text.txt'
