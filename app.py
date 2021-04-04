@@ -1,6 +1,5 @@
 from flask import Flask, request, abort
 import time
-from flask import render_template
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -29,10 +28,6 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 line_bot_api = LineBotApi('BDI6ylS9MznYiQN5NYMpon16tmO26AqIXJllRdUQnRl1aO7Rhb8B4j7r6GqtaJcbk9NKTJ7cTX/20TfzxhM98V/Stw9Jwv96VhGfnfeE23uswO0jkaP7fhLhiGH5tuIsHnWFg58LWScFoB3cy4DoKwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('b22403a4e09be637b37ebcc7fc3325d3')
-
-@app.route("/")
-def home():
-    return render_template("home.html")
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
