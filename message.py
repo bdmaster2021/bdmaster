@@ -8,25 +8,24 @@ def imagemap_message():
     message = ImagemapSendMessage(
         base_url="https://i.imgur.com/uromzgS.png",
         alt_text='主選單開啟',
-        base_size=BaseSize(height=2000, width=2000),
+        base_size=BaseSize(height=672, width=672),
         actions=[
             URIImagemapAction(
                 #性別
                 area=ImagemapArea(
-                    x=0, y=0, width=2000, height=1000
+                    x=0, y=0, width=600, height=300
                 )
             ),
-           
             URIImagemapAction(
                 #區域
                 area=ImagemapArea(
-                    x=0, y=1000, width=1000, height=1000
+                    x=0, y=300, width=300, height=300
                 )
             ),
             URIImagemapAction(
                 #競爭校系
                 area=ImagemapArea(
-                    x=1000, y=1000, width=1000, height=1000
+                    x=300, y=300, width=300, height=300
                 )
             ),
         ]
