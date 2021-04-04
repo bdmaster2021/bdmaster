@@ -29,6 +29,12 @@ line_bot_api = LineBotApi('BDI6ylS9MznYiQN5NYMpon16tmO26AqIXJllRdUQnRl1aO7Rhb8B4
 # Channel Secret
 handler = WebhookHandler('b22403a4e09be637b37ebcc7fc3325d3')
 
+majors = ['新聞學系','廣播電視電影學系廣播組','廣播電視電影學系電視組','廣播電視電影學系電影組','圖文傳播暨數位出版學系','公共關係暨廣告學系','口語傳播暨社群媒體學系',
+         '資訊傳播學系','數位多媒體設計學系動畫設計組','數位多媒體設計學系遊戲設計組','傳播管理學系','資訊管理學系資訊管理組','資訊管理學系資訊科技組','資訊管理學系網路科技組',
+         '財務金融學系','行政管理學系','觀光學系餐旅經營管理組','觀光學系旅遊暨休閒事業管理組','觀光學系觀光規劃暨資源管理組','經濟學系','企業管理學系','社會心理學系',
+         '英語暨傳播應用學系','中國文學系','日本語文學系','法律學系']
+majorIndex = '99'
+
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -51,25 +57,22 @@ def handle_message(event):
     msg = event.message.text
     id = event.source.user_id
     if '開始使用選才機器人' in msg:
-        message = TextSendMessage(text=str(id)+'\n使用說明：\n請輸入您的科系(含組)全名')
+        message = TextSendMessage(text=str(id)+'\n使用說明：\n請輸入您的科系(含組)全名\n例：資訊管理學系資訊管理組')
         line_bot_api.reply_message(event.reply_token, message)
-    elif '最新合作廠商' in msg:
-        message = imagemap_message()
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '最新活動訊息' in msg:
-        message = buttons_message()
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '註冊會員' in msg:
-        message = Confirm_Template()
+    elif '系' in msg:
+        for i in range(len(majors)):
+            if msg == majors[i]:
+                if i <= 10:
+                    majorIndex = '0'+str(i+1)+'2'
+                else:
+                    majorIndex = str(i+1)+'2'
+                message = TextSendMessage(text='您的科系：\n'+msg + '\nIndex:'+majorIndex)
+            else:
+                message = TextSendMessage(text='請重新輸入')
+        
         line_bot_api.reply_message(event.reply_token, message)
     elif '旋轉木馬' in msg:
         message = Carousel_Template()
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '圖片畫廊' in msg:
-        message = test()
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '功能列表' in msg:
-        message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     else:
         fName = 'text.txt'
