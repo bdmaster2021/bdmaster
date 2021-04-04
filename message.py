@@ -10,7 +10,7 @@ def imagemap_message():
         alt_text='主選單開啟',
         base_size=BaseSize(height=2000, width=2000),
         actions=[
-            URIImagemapAction(
+            MessageImagemapAction(
                 #性別
                 text='性別',
                 area=ImagemapArea(
@@ -18,14 +18,14 @@ def imagemap_message():
                 )
             ),
            
-            URIImagemapAction(
+            MessageImagemapAction(
                 #區域
                 text='區域',
                 area=ImagemapArea(
                     x=0, y=1000, width=1000, height=1000
                 )
             ),
-            URIImagemapAction(
+            MessageImagemapAction(
                 #競爭校系
                 text='競爭校系',
                 area=ImagemapArea(
