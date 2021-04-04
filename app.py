@@ -49,7 +49,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    id = event.source.userId
+    id = event.source.userd
     if '開始使用選才機器人' in msg:
         message = TextSendMessage(text='ID:'+str(id)+'%0D%0A使用說明：%0D%0A請輸入您的科系(含組)全名')
         line_bot_api.reply_message(event.reply_token, message)
