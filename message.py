@@ -12,7 +12,7 @@ def imagemap_message():
         actions=[
             URIImagemapAction(
                 #性別
-                text='性別'
+                text='性別',
                 area=ImagemapArea(
                     x=0, y=0, width=2000, height=1000
                 )
@@ -20,14 +20,14 @@ def imagemap_message():
            
             URIImagemapAction(
                 #區域
-                text='區域'
+                text='區域',
                 area=ImagemapArea(
                     x=0, y=1000, width=1000, height=1000
                 )
             ),
             URIImagemapAction(
                 #競爭校系
-                text='競爭校系'
+                text='競爭校系',
                 area=ImagemapArea(
                     x=1000, y=1000, width=1000, height=1000
                 )
