@@ -86,8 +86,8 @@ def handle_message(event):
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif event.message.text == "性別":
-        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://i.imgur.com/zo4YuDr.png',
-                                    preview_image_url='https://i.imgur.com/zo4YuDr.png'))
+        message = gender_message('性別_12')
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         fName = 'text.txt'
         if os.path.exists(fName):
