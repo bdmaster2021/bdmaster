@@ -7,9 +7,9 @@ from linebot.models import *
 def gender_message(x):
     x = x[-2:]
     if x == '12':
-    message = ImageSendMessage(original_content_url='https://i.imgur.com/zo4YuDr.png',
+         message = ImageSendMessage(original_content_url='https://i.imgur.com/zo4YuDr.png',
                                                 preview_image_url='https://i.imgur.com/zo4YuDr.png'
-    )
+         )
     return message
 
 #ImagemapSendMessage(組圖訊息)
@@ -22,7 +22,7 @@ def imagemap_message():
             MessageImagemapAction(
                 #性別
                 text='性別',
-                gender_message(gender_12),
+               
                 area=ImagemapArea(
                     x=0, y=0, width=2000, height=1000
                 )
