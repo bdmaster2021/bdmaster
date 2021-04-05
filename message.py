@@ -5,11 +5,11 @@ from linebot.models import *
 
 
 def gender_message(x):
-    x = x[-2:]
     message = TextSendMessage(text='性別Error')
-    if x == '12':
-         message = ImageSendMessage(original_content_url='https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/gender_012.png',
-                                                preview_image_url='https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/gender_012.png'
+    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/'
+    if x[-3:] == '012':
+         message = ImageSendMessage(original_content_url=path + x +'.png',
+                                                preview_image_url=path + x +'.png'
          )
     return message
 
