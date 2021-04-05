@@ -4,17 +4,17 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 
 
-def gender_message(x):
+def gender_message(majorIndex):
     message = TextSendMessage(text='性別Error')
     path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/'
-    if x[-3:] == '012':
-         message = ImageSendMessage(original_content_url=path + x +'.png',
-                                                preview_image_url=path + x +'.png'
+    if majorIndex[-3:] == '012':
+         message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
+                                                preview_image_url=path + majorIndex +'.png'
          )
     return message
 
 #ImagemapSendMessage(組圖訊息)
-def imagemap_message():
+def imagemap_message(majorIndex):
     message = ImagemapSendMessage(
         base_url="https://i.imgur.com/ykHOrzZ.jpg",
         alt_text='主選單開啟',
@@ -22,21 +22,21 @@ def imagemap_message():
         actions=[
             MessageImagemapAction(
                 #性別
-                text='性別',
+                text='性別'+'_'+majorIndex,
                 area=ImagemapArea(
                     x=0, y=0, width=2000, height=1000
                 )
             ),
             MessageImagemapAction(
                 #區域
-                text='區域',
+                text='區域'+'_'+majorIndex,
                 area=ImagemapArea(
                     x=0, y=1000, width=1000, height=1000
                 )
             ),
             MessageImagemapAction(
                 #競爭友校
-                text='競爭友校',
+                text='競爭友校'+'_'+majorIndex,
                 area=ImagemapArea(
                     x=1000, y=1000, width=1000, height=1000
                 )
