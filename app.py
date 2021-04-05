@@ -64,7 +64,7 @@ def handle_message(event):
     msg = event.message.text
     id = event.source.user_id
     if '選才主選單' in msg:
-        message = imagemap_message()
+        message = imagemap_message('012')
         line_bot_api.reply_message(event.reply_token, message)
     elif '開始使用選才機器人' in msg:
         message = TextSendMessage(text=str(id)+'\n使用說明：\n請輸入您的科系(含組)全名\n例：資訊管理學系資訊管理組')
