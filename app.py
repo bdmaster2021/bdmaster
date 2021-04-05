@@ -1,6 +1,8 @@
 from flask import Flask, request, abort
 import time
 import urllib.request
+from linebot.models import *
+
 from flask import render_template
 
 from linebot import (
