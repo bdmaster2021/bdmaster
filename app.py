@@ -64,7 +64,7 @@ def handle_message(event):
     msg = event.message.text
     id = event.source.user_id
     if '選才主選單' in msg:
-        if os.path.exists(str(id)+'txt'):
+        if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
             message = imagemap_message(f.read())
             f.close
@@ -94,7 +94,7 @@ def handle_message(event):
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '性別' in msg:
-        if os.path.exists(str(id)+'txt'):
+        if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
             message = gender_message('gender_'+f.read())
             #message = imagemap_message(f.read())
