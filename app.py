@@ -64,7 +64,12 @@ def handle_message(event):
     msg = event.message.text
     id = event.source.user_id
     if '選才主選單' in msg:
-        message = imagemap_message('012')
+        if os.path.exists(str(id)+'txt'):
+            f = open(str(id)+'.txt','r')
+            message = imagemap_message(f.read())
+            f.close
+        else:
+            message = TextSendMessage(text='請先輸入校系')
         line_bot_api.reply_message(event.reply_token, message)
     elif '開始使用選才機器人' in msg:
         message = TextSendMessage(text=str(id)+'\n使用說明：\n請輸入您的科系(含組)全名\n例：資訊管理學系資訊管理組')
@@ -76,6 +81,9 @@ def handle_message(event):
                     majorIndex = '0'+str(i+1)+'2'
                 else:
                     majorIndex = str(i+1)+'2'
+                f = open(str(id)+'.txt','w')
+                f.write(majorIndex)
+                f.close
                 message = TextSendMessage(text='您的科系：\n'+msg + '\nIndex:'+majorIndex)
                 break
             else:
@@ -86,7 +94,14 @@ def handle_message(event):
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '性別' in msg:
-        message = gender_message('gender_012')
+        if os.path.exists(str(id)+'txt'):
+            f = open(str(id)+'.txt','r')
+            message = gender_message('gender_'+f.read())
+            #message = imagemap_message(f.read())
+            f.close
+        else:
+            message = TextSendMessage(text='請先輸入校系')
+        #message = gender_message('gender_012')
         line_bot_api.reply_message(event.reply_token, message)
     else:
         fName = 'text.txt'
