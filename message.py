@@ -7,10 +7,8 @@ from linebot.models import *
 def gender_message(majorIndex):
     message = TextSendMessage(text='性別Error')
     path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/'
-    if majorIndex[-3:] == '012':
-         message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
-                                                preview_image_url=path + majorIndex +'.png'
-         )
+    message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
+                               preview_image_url=path + majorIndex +'.png')
     return message
 
 #ImagemapSendMessage(組圖訊息)
