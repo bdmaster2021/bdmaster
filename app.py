@@ -86,7 +86,7 @@ def handle_message(event):
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '性別' in msg:
-        message = gender_message('性別_12')
+        message = gender_message('gender_012')
         line_bot_api.reply_message(event.reply_token, message)
     else:
         fName = 'text.txt'
