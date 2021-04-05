@@ -85,7 +85,7 @@ def handle_message(event):
     elif '旋轉木馬' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
-    elif event.message.text == "性別":
+    elif '性別' in msg:
         message = gender_message('性別_12')
         line_bot_api.reply_message(event.reply_token, message)
     else:
