@@ -8,8 +8,13 @@ def gender_message(x):
     x = x[-2:]
     message = TextSendMessage(text='性別Error')
     if x == '12':
+        '''
          message = ImageSendMessage(original_content_url='https://i.imgur.com/zo4YuDr.png',
                                                 preview_image_url='https://i.imgur.com/zo4YuDr.png'
+         )
+            '''
+         message = ImageSendMessage(original_content_url='https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/gender_012.png',
+                                                preview_image_url='https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/gender_012.png'
          )
     return message
 
