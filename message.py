@@ -6,6 +6,7 @@ from linebot.models import *
 
 def gender_message(x):
     x = x[2:]
+    message = TextSendMessage(text='性別Error')
     if x == '12':
          message = ImageSendMessage(original_content_url='https://i.imgur.com/zo4YuDr.png',
                                                 preview_image_url='https://i.imgur.com/zo4YuDr.png'
