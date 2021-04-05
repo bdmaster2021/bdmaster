@@ -10,7 +10,7 @@ def gender_message(x):
     message = ImageSendMessage(original_content_url='https://i.imgur.com/zo4YuDr.png',
                                                 preview_image_url='https://i.imgur.com/zo4YuDr.png'
     )
-
+    return message
 
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
