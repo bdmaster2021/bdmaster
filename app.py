@@ -101,7 +101,7 @@ def handle_message(event):
     elif '系' in msg:
         for i in range(len(majors)):
             if majors[i].isdigit():
-                majorTemp = major[i]
+                majorTemp = majors[i]
             elif msg == majors[i]:
                 majorIndex = majorTemp
                 f = open(str(id)+'.txt','w')
