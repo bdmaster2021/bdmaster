@@ -129,7 +129,7 @@ def handle_message(event):
     elif '區域' in msg:
         if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
-            message = gender_message('area_'+f.read())
+            message = area_message('area_'+f.read())
             #message = imagemap_message(f.read())
             f.close
         else:
