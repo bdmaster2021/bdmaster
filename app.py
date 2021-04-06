@@ -60,6 +60,7 @@ majors = ['012','新聞學系','新聞系',
           '262','法律學系','法律系']
 
 majorIndex = '99'
+majorTemp = ''
 
 @app.route("/")
 def home():
@@ -99,11 +100,10 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     elif '系' in msg:
         for i in range(len(majors)):
-            if msg == majors[i]:
-                if i <= 10:
-                    majorIndex = '0'+str(i+1)+'2'
-                else:
-                    majorIndex = str(i+1)+'2'
+            if majors[i].isdigit():
+                majorTemp = major[i]
+            elif msg == majors[i]:
+                majorIndex = majorTemp
                 f = open(str(id)+'.txt','w')
                 f.write(majorIndex)
                 f.close
