@@ -11,6 +11,13 @@ def gender_message(majorIndex):
                                preview_image_url=path + majorIndex +'.png')
     return message
 
+def area_message(majorIndex):
+    message = TextSendMessage(text='區域Error')
+    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/area/'
+    message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
+                               preview_image_url=path + majorIndex +'.png')
+    return message
+
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message(majorIndex):
     message = ImagemapSendMessage(
