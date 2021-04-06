@@ -126,6 +126,16 @@ def handle_message(event):
             message = TextSendMessage(text='請先輸入校系')
         #message = gender_message('gender_012')
         line_bot_api.reply_message(event.reply_token, message)
+    elif '區域' in msg:
+        if os.path.exists(str(id)+'.txt'):
+            f = open(str(id)+'.txt','r')
+            message = gender_message('area_'+f.read())
+            #message = imagemap_message(f.read())
+            f.close
+        else:
+            message = TextSendMessage(text='請先輸入校系')
+        #message = gender_message('gender_012')
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         fName = 'text.txt'
         if os.path.exists(fName):
