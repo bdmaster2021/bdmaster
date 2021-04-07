@@ -107,11 +107,11 @@ def handle_message(event):
                 f = open(str(id)+'.txt','w')
                 f.write(majorIndex)
                 f.close
-                #message = TextSendMessage(text='您的科系：\n'+msg + '\nIndex:'+majorIndex)
-                message = TextSendMessage(text='選才主選單')
+                message = TextSendMessage(text='您的科系為：\n'+msg)
+                #message = TextSendMessage(text='選才主選單')
                 break
             else:
-                message = TextSendMessage(text='請重新輸入')
+                message = TextSendMessage(text='請重新輸入校系')
         
         line_bot_api.reply_message(event.reply_token, message)
     elif '旋轉木馬' in msg:
@@ -138,6 +138,7 @@ def handle_message(event):
         #message = gender_message('gender_012')
         line_bot_api.reply_message(event.reply_token, message)
     else:
+        '''
         fName = 'text.txt'
         if os.path.exists(fName):
             f = open(fName,'a')
@@ -154,7 +155,8 @@ def handle_message(event):
             out = file1.read()
             message = TextSendMessage(text=out)
         #message = TextSendMessage(text=f)file.read().decode("utf-8"))
-        
+        '''
+        message = TextSendMessage(text='無法辨識，請重新輸入。')
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
