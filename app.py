@@ -61,6 +61,8 @@ majors = ['012','新聞學系','新聞系',
 
 majorIndex = '99'
 majorTemp = ''
+majorList = []
+messageString = ''
 
 @app.route("/")
 def home():
@@ -87,6 +89,9 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     id = event.source.user_id
+    majorList = []
+    majorIndex = '99'
+    majorTemp = ''
     if '選才主選單' in msg:
         if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
@@ -102,12 +107,20 @@ def handle_message(event):
         for i in range(len(majors)):
             if majors[i].isdigit():
                 majorTemp = majors[i]
+                for j in range(i,len(majors)):
+                    if majors[j].isdigit() == False:
+                        majorList.append(majors[j])
+                    else:
+                        break
             elif msg == majors[i]:
                 majorIndex = majorTemp
                 f = open(str(id)+'.txt','w')
                 f.write(majorIndex)
                 f.close
-                message = TextSendMessage(text='您的科系為：\n'+msg)
+                messageString = '您的科系為：\n'+msg +'\n您也可輸入：'
+                for k in majorList:
+                    messageString += '\n' + k
+                message = TextSendMessage(text=messageString)
                 #message = TextSendMessage(text='選才主選單')
                 break
             else:
