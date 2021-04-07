@@ -121,8 +121,12 @@ def handle_message(event):
                 messageString = '您的科系為：\n「'+msg +'」\n\n也可輸入為：'
                 for k in majorList:
                     messageString += '\n' + k
-                message = TextSendMessage(text=messageString)
+                #message = TextSendMessage(text=messageString)
                 #message = TextSendMessage(text='選才主選單')
+                
+                f = open(str(id)+'.txt','r')
+                message = imagemap_message(f.read())
+                f.close
                 break
             else:
                 message = TextSendMessage(text='請重新輸入校系')
