@@ -107,7 +107,7 @@ def handle_message(event):
                 f = open(str(id)+'.txt','w')
                 f.write(majorIndex)
                 f.close
-                message = TextSendMessage(text='您的科系：\n'+msg + '\nIndex:'+majorIndex)
+                message = TextSendMessage(text='您的科系：\n'+msg + '\nIndex:'+majorIndex+'\n選才主選單')
                 break
             else:
                 message = TextSendMessage(text='請重新輸入')
