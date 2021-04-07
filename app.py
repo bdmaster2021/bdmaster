@@ -107,6 +107,7 @@ def handle_message(event):
         for i in range(len(majors)):
             if majors[i].isdigit():
                 majorTemp = majors[i]
+                majorList = []
                 for j in range(i+1,len(majors)):
                     if majors[j].isdigit() == False:
                         majorList.append(majors[j])
