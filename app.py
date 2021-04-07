@@ -118,7 +118,7 @@ def handle_message(event):
                 f = open(str(id)+'.txt','w')
                 f.write(majorIndex)
                 f.close
-                messageString = '您的科系為：\n'+msg +'\n您也可輸入：'
+                messageString = '您的科系為：「'+msg +'」\n\n「'+msg+'」也可輸入為：'
                 for k in majorList:
                     messageString += '\n' + k
                 message = TextSendMessage(text=messageString)
