@@ -178,10 +178,7 @@ def handle_message(event):
             if i.isdigit() == False:
                 if '學' not in i:
                     msgstr += i
-                    msgstr += ','
-            else:
-                msgstr = msgstr[:-1]
-                msgstr += '\n'
+                    msgstr += '\n'
         msgstr = msgstr[:-1]
         message = TextSendMessage(text=msgstr)
         line_bot_api.reply_message(event.reply_token, message)
