@@ -179,7 +179,7 @@ def handle_message(event):
                 msgstr += i
                 msgstr += ','
             else:
-                msgstr.strip().rstrip(',')
+                msgstr = msgstr[:-1]
                 msgstr += '\n'
         message = TextSendMessage(text=msgstr)
         line_bot_api.reply_message(event.reply_token, message)
