@@ -61,7 +61,8 @@ def majorsCom_message(id):
 def imagemap_message(majorIndex):
     message = ImagemapSendMessage(
         #base_url="https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/MainUI.png",
-        base_url="https://imgur.com/kCGImJt.png",
+        #base_url="https://imgur.com/kCGImJt.png",
+        base_url="https://imgur.com/GaoLS7r.png",
         alt_text='主選單開啟',
         base_size=BaseSize(height=2000, width=2000),
         actions=[
