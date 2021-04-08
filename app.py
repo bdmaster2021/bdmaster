@@ -122,7 +122,7 @@ def handle_message(event):
                 for k in majorList:
                     messageString += '\n' + k
                 message = TextSendMessage(text=messageString)
-                message = TextSendMessage(text='選才主選單')
+                #message = TextSendMessage(text='選才主選單')
                 
                 #f = open(str(id)+'.txt','r')
                 #message = imagemap_message(f.read())
