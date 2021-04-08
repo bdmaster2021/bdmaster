@@ -52,7 +52,7 @@ def majorsCom_message(id):
     f = open(path,'r',encoding = 'utf-8-sig')
     data = f.read().split(',')
     indexTemp = data.index(majorIndex)
-    msg = '\n第一名:'+data[indexTemp+1]+'\n第二名:'+data[indexTemp+2]+'\n第三名:'+data[indexTemp+3]+'\n第四名:'+data[indexTemp+4]+'\n第五名:'+data[indexTemp+5]
+    msg = '\n1.'+data[indexTemp+1]+'\n2.'+data[indexTemp+2]+'\n3.'+data[indexTemp+3]+'\n4.'+data[indexTemp+4]+'\n5.'+data[indexTemp+5]
     #message = TextSendMessage(text=msg)
     f.close
     return msg
