@@ -16,7 +16,7 @@ def gender_message(id):
     else:
         message = TextSendMessage(text='請先輸入校系')
         
-    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/'
+    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/gender_'
     message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
                                preview_image_url=path + majorIndex +'.png')
     return message
@@ -32,7 +32,7 @@ def area_message(id):
     else:
         message = TextSendMessage(text='請先輸入校系')
         
-    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/area/'
+    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/area/area_'
     message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
                                preview_image_url=path + majorIndex +'.png')
     return message
