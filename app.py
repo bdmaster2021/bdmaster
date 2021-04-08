@@ -132,11 +132,6 @@ def handle_message(event):
                 message = TextSendMessage(text='請重新輸入校系')
         
         line_bot_api.reply_message(event.reply_token, message)
-    '''
-    elif '旋轉木馬' in msg:
-        message = Carousel_Template()
-        line_bot_api.reply_message(event.reply_token, message)
-    '''
     elif '性別' in msg:
         message = gender_message(str(id))
         '''
@@ -173,24 +168,6 @@ def handle_message(event):
         
         line_bot_api.reply_message(event.reply_token, message)
     else:
-        '''
-        fName = 'text.txt'
-        if os.path.exists(fName):
-            f = open(fName,'a')
-            f.write('/n'+str(time.time()))
-            f.close()
-            file1 = open(fName,'r')
-            out = file1.read()
-            message = TextSendMessage(text=out)
-        else:
-            f = open(fName,'w')
-            f.write(str(time.time()))
-            f.close()
-            file1 = open(fName,'r')
-            out = file1.read()
-            message = TextSendMessage(text=out)
-        #message = TextSendMessage(text=f)file.read().decode("utf-8"))
-        '''
         message = TextSendMessage(text='無法辨識，請重新輸入。')
         line_bot_api.reply_message(event.reply_token, message)
 
