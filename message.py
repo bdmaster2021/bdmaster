@@ -4,18 +4,44 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 
 
-def gender_message(majorIndex):
+def gender_message():
     message = TextSendMessage(text='性別Error')
+    
+    majorIndex = ''
+    if os.path.exists(str(id)+'.txt'):
+        f = open(str(id)+'.txt','r')
+        majorIndex = f.read()
+        f.close
+    else:
+        message = TextSendMessage(text='請先輸入校系')
+        
     path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/gender/'
     message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
                                preview_image_url=path + majorIndex +'.png')
     return message
 
-def area_message(majorIndex):
+def area_message():
     message = TextSendMessage(text='區域Error')
+    
+    majorIndex = ''
+    if os.path.exists(str(id)+'.txt'):
+        f = open(str(id)+'.txt','r')
+        majorIndex = f.read()
+        f.close
+    else:
+        message = TextSendMessage(text='請先輸入校系')
+        
     path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/area/'
     message = ImageSendMessage(original_content_url=path + majorIndex +'.png',
                                preview_image_url=path + majorIndex +'.png')
+    return message
+
+def majorsCom_message(majorIndex):
+    message = TextSendMessage(text='競爭友校Error')
+    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/https://github.com/bdmaster2021/bdmaster/blob/main/majorsCompetition.txt'
+    f = open(path,'r')
+    message = TextSendMessage(text=f.read())
+    f.close
     return message
 
 #ImagemapSendMessage(組圖訊息)
