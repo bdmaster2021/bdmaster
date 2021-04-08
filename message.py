@@ -50,7 +50,8 @@ def majorsCom_message(id):
     
     path = 'majorsCompetition.txt'
     f = open(path,'r',encoding = 'utf-8')
-    message = TextSendMessage(text=f.read())
+    data = f.read().split(',')
+    message = TextSendMessage(text=data)
     f.close
     return message
 
