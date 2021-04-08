@@ -63,21 +63,24 @@ def imagemap_message(majorIndex):
         actions=[
             MessageImagemapAction(
                 #性別
-                text='性別'+'_'+majorIndex,
+                #text='性別'+'_'+majorIndex,
+                text='性別',
                 area=ImagemapArea(
                     x=0, y=0, width=2000, height=1000
                 )
             ),
             MessageImagemapAction(
                 #區域
-                text='區域'+'_'+majorIndex,
+                #text='區域'+'_'+majorIndex,
+                text='區域',
                 area=ImagemapArea(
                     x=0, y=1000, width=1000, height=1000
                 )
             ),
             MessageImagemapAction(
                 #競爭友校
-                text='競爭友校'+'_'+majorIndex,
+                #text='競爭友校'+'_'+majorIndex,
+                text='競爭友校',
                 area=ImagemapArea(
                     x=1000, y=1000, width=1000, height=1000
                 )
