@@ -172,8 +172,14 @@ def handle_message(event):
         mes += messageTemp
         message = TextSendMessage(text=mes)
         line_bot_api.reply_message(event.reply_token, message)
-    elif msg == '說明':
-        message = TextSendMessage(text='')
+    elif msg == 'help':
+        msgstr = '以下為所有科系可接受的名稱'
+        for i in majors:
+            if i.isdigit() == False:
+                msgstr += i
+            else:
+                msgstr += '\n'
+        message = TextSendMessage(text=msgstr)
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='無法辨識，請重新輸入。')
