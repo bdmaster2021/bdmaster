@@ -51,7 +51,7 @@ def majorsCom_message(id):
     path = 'majorsCompetition.txt'
     f = open(path,'r',encoding = 'utf-8-sig')
     data = f.read().split(',')
-    indexTemp = data.index(id)
+    indexTemp = data.index(majorIndex)
     msg = '第一名:'+data[indexTemp+1]+'\n第二名:'+data[indexTemp+2]+'\n第三名:'+data[indexTemp+3]+'\n第四名:'+data[indexTemp+4]+'\n第五名:'+data[indexTemp+5]+'\n'
     message = TextSendMessage(text=msg)
     f.close
