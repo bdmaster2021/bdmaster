@@ -177,7 +177,9 @@ def handle_message(event):
         for i in majors:
             if i.isdigit() == False:
                 msgstr += i
+                msgstr += ','
             else:
+                msgstr.strip().lstrip().rstrip(',')
                 msgstr += '\n'
         message = TextSendMessage(text=msgstr)
         line_bot_api.reply_message(event.reply_token, message)
