@@ -172,6 +172,9 @@ def handle_message(event):
         mes += messageTemp
         message = TextSendMessage(text=mes)
         line_bot_api.reply_message(event.reply_token, message)
+    elif msg == '說明':
+        message = TextSendMessage(text='')
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='無法辨識，請重新輸入。')
         line_bot_api.reply_message(event.reply_token, message)
