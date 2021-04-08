@@ -173,7 +173,7 @@ def handle_message(event):
         message = TextSendMessage(text=mes)
         line_bot_api.reply_message(event.reply_token, message)
     elif msg.lower() == 'help':
-        msgstr = '以下為可接受的科系簡稱： '
+        msgstr = '以下為可接受的科系簡稱：\n'
         for i in majors:
             if i.isdigit() == False:
                 if '學' not in i:
