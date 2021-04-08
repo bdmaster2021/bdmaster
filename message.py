@@ -4,12 +4,12 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 
 
-def gender_message():
+def gender_message(id):
     message = TextSendMessage(text='性別Error')
     
     majorIndex = ''
-    if os.path.exists(str(id)+'.txt'):
-        f = open(str(id)+'.txt','r')
+    if os.path.exists(id+'.txt'):
+        f = open(id+'.txt','r')
         majorIndex = f.read()
         f.close
     else:
@@ -20,12 +20,12 @@ def gender_message():
                                preview_image_url=path + majorIndex +'.png')
     return message
 
-def area_message():
+def area_message(id):
     message = TextSendMessage(text='區域Error')
     
     majorIndex = ''
-    if os.path.exists(str(id)+'.txt'):
-        f = open(str(id)+'.txt','r')
+    if os.path.exists(id+'.txt'):
+        f = open(id+'.txt','r')
         majorIndex = f.read()
         f.close
     else:
