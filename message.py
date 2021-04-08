@@ -60,7 +60,7 @@ def majorsCom_message(id):
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message(majorIndex):
     message = ImagemapSendMessage(
-        base_url="https://github.com/bdmaster2021/bdmaster/blob/main/MainUI.png",
+        base_url="https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/MainUI.png",
         alt_text='主選單開啟',
         base_size=BaseSize(height=2000, width=2000),
         actions=[
