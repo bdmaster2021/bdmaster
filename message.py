@@ -48,8 +48,8 @@ def majorsCom_message(id):
     else:
         message = TextSendMessage(text='請先輸入校系')
     
-    path = 'https://github.com/bdmaster2021/bdmaster/blob/main/majorsCompetition.txt'
-    f = open(path,'r')
+    path = 'majorsCompetition.txt'
+    f = open(path,'r',encoding = 'utf-8')
     message = TextSendMessage(text=f.read())
     f.close
     return message
