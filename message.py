@@ -36,8 +36,17 @@ def area_message(id):
                                preview_image_url=path + majorIndex +'.png')
     return message
 
-def majorsCom_message(majorIndex):
+def majorsCom_message(id):
     message = TextSendMessage(text='競爭友校Error')
+    
+    majorIndex = ''
+    if os.path.exists(id+'.txt'):
+        f = open(id+'.txt','r')
+        majorIndex = f.read()
+        f.close
+    else:
+        message = TextSendMessage(text='請先輸入校系')
+    
     path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/https://github.com/bdmaster2021/bdmaster/blob/main/majorsCompetition.txt'
     f = open(path,'r')
     message = TextSendMessage(text=f.read())
