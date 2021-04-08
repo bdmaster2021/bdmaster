@@ -167,7 +167,7 @@ def handle_message(event):
             message = TextSendMessage(text='請先輸入校系')
         '''
         f = open(str(id)+'.txt','r')
-        mes = majors[majors.index(f.read())+1] + '的主要競爭對手為：\n'
+        mes = majors[majors.index(f.read())+1] + '的主要競爭友校為：\n'
         f.close
         mes += messageTemp
         message = TextSendMessage(text=mes)
