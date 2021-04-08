@@ -60,7 +60,7 @@ def majorsCom_message(id):
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message(majorIndex):
     message = ImagemapSendMessage(
-        base_url="https://i.imgur.com/ykHOrzZ.jpg",
+        base_url="https://github.com/bdmaster2021/bdmaster/blob/main/MainUI.png",
         alt_text='主選單開啟',
         base_size=BaseSize(height=2000, width=2000),
         actions=[
@@ -69,7 +69,7 @@ def imagemap_message(majorIndex):
                 #text='性別'+'_'+majorIndex,
                 text='性別',
                 area=ImagemapArea(
-                    x=0, y=0, width=2000, height=1000
+                    x=0, y=0, width=1000, height=1000
                 )
             ),
             MessageImagemapAction(
@@ -77,7 +77,7 @@ def imagemap_message(majorIndex):
                 #text='區域'+'_'+majorIndex,
                 text='區域',
                 area=ImagemapArea(
-                    x=0, y=1000, width=1000, height=1000
+                    x=1000, y=0, width=1000, height=1000
                 )
             ),
             MessageImagemapAction(
@@ -85,7 +85,7 @@ def imagemap_message(majorIndex):
                 #text='競爭友校'+'_'+majorIndex,
                 text='競爭友校',
                 area=ImagemapArea(
-                    x=1000, y=1000, width=1000, height=1000
+                    x=0, y=1000, width=2000, height=1000
                 )
             ),
         ]
