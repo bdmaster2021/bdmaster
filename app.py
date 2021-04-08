@@ -92,7 +92,7 @@ def handle_message(event):
     majorList = []
     majorIndex = '99'
     majorTemp = ''
-    if '選才主選單' in msg:
+    if '主選單' in msg:
         if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
             message = imagemap_message(f.read())
@@ -121,6 +121,7 @@ def handle_message(event):
                 messageString = '您的科系為：\n「'+msg +'」\n\n也可輸入為：'
                 for k in majorList:
                     messageString += '\n' + k
+                messageString += '\n\n請點選下方功能表中的「主選單」或自行輸入「主選單」以選擇要顯示的內容'
                 message = TextSendMessage(text=messageString)
                 #message = TextSendMessage(text='選才主選單')
                 
@@ -156,7 +157,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     elif '競爭友校' in msg:
         
-        message = majorsCom_message(str(id))
+        messageTemp = majorsCom_message(str(id))
         '''
         if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
@@ -165,7 +166,10 @@ def handle_message(event):
         else:
             message = TextSendMessage(text='請先輸入校系')
         '''
-        
+        f = open(str(id)+'.txt','r')
+        message = majors[majors.index(f.read())+1] + '的主要競爭對手為：\n'
+        f.close
+        message += messageTemp
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='無法辨識，請重新輸入。')
