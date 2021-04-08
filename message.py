@@ -52,7 +52,7 @@ def majorsCom_message(id):
     f = open(path,'r',encoding = 'utf-8-sig')
     data = f.read().split(',')
     indexTemp = data.index(majorIndex)
-    msg = '第一名:'+data[indexTemp+1]+'\n第二名:'+data[indexTemp+2]+'\n第三名:'+data[indexTemp+3]+'\n第四名:'+data[indexTemp+4]+'\n第五名:'+data[indexTemp+5]+'\n'
+    msg = '\n第一名:'+data[indexTemp+1]+'\n第二名:'+data[indexTemp+2]+'\n第三名:'+data[indexTemp+3]+'\n第四名:'+data[indexTemp+4]+'\n第五名:'+data[indexTemp+5]
     #message = TextSendMessage(text=msg)
     f.close
     return msg
@@ -91,7 +91,7 @@ def imagemap_message(majorIndex):
         ]
     )
     return message
-
+'''
 #TemplateSendMessage - ButtonsTemplate (按鈕介面訊息)
 def buttons_message():
     message = TemplateSendMessage(
@@ -251,5 +251,5 @@ def image_carousel_message1():
         )
     )
     return message
-
+'''
 #關於LINEBOT聊天內容範例
