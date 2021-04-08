@@ -138,28 +138,39 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     '''
     elif '性別' in msg:
+        message = gender_message(str(id))
+        '''
         if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
             message = gender_message('gender_'+f.read())
             f.close
         else:
             message = TextSendMessage(text='請先輸入校系')
+        '''
         line_bot_api.reply_message(event.reply_token, message)
     elif '區域' in msg:
+        message = area_message(str(id))
+        '''
         if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
             message = area_message('area_'+f.read())
             f.close
         else:
             message = TextSendMessage(text='請先輸入校系')
+        '''
         line_bot_api.reply_message(event.reply_token, message)
     elif '競爭友校' in msg:
+        
+        message = majorsCom_message(str(id))
+        '''
         if os.path.exists(str(id)+'.txt'):
             f = open(str(id)+'.txt','r')
             message = majorsCom_message('majorsCompetition_'+f.read())
             f.close
         else:
             message = TextSendMessage(text='請先輸入校系')
+        '''
+        
         line_bot_api.reply_message(event.reply_token, message)
     else:
         '''
