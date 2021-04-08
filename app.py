@@ -98,7 +98,7 @@ def handle_message(event):
             message = imagemap_message(f.read())
             f.close
         else:
-            message = TextSendMessage(text='請先輸入校系')
+            message = TextSendMessage(text='請先輸入校系\n\n若您需要科系的名稱，請輸入「help」。')
         line_bot_api.reply_message(event.reply_token, message)
     elif '開始使用選才機器人' in msg:
         message = TextSendMessage(text='使用說明：\n請輸入您的科系(含組)全名\n例：資訊管理學系資訊管理組\n或是\n輸入科系簡稱\n例：資管系資管組\n\n若您需要科系的名稱，請輸入「help」。')
