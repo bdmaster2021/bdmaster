@@ -167,9 +167,10 @@ def handle_message(event):
             message = TextSendMessage(text='請先輸入校系')
         '''
         f = open(str(id)+'.txt','r')
-        message = majors[majors.index(f.read())+1] + '的主要競爭對手為：\n'
+        mes = majors[majors.index(f.read())+1] + '的主要競爭對手為：\n'
         f.close
-        message += messageTemp
+        mes += messageTemp
+        message = TextSendMessage(text=mes)
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='無法辨識，請重新輸入。')
