@@ -48,7 +48,7 @@ def majorsCom_message(id):
     else:
         message = TextSendMessage(text='請先輸入校系')
     
-    path = 'https://raw.githubusercontent.com/bdmaster2021/bdmaster/main/https://github.com/bdmaster2021/bdmaster/blob/main/majorsCompetition.txt'
+    path = 'https://github.com/bdmaster2021/bdmaster/blob/main/majorsCompetition.txt'
     f = open(path,'r')
     message = TextSendMessage(text=f.read())
     f.close
