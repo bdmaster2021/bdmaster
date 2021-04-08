@@ -173,14 +173,15 @@ def handle_message(event):
         message = TextSendMessage(text=mes)
         line_bot_api.reply_message(event.reply_token, message)
     elif msg == 'help':
-        msgstr = '以下為所有科系可接受的名稱： '
-        for i in majors:
-            if i.isdigit() == False:
-                msgstr += i
+        msgstr = '以下為可接受的科系簡稱： '
+        for i in range(len(majors)):
+            if majors[i].isdigit() == False:
+                msgstr += majors[i]
                 msgstr += ','
             else:
                 msgstr = msgstr[:-1]
                 msgstr += '\n'
+                i += 1
         message = TextSendMessage(text=msgstr)
         line_bot_api.reply_message(event.reply_token, message)
     else:
